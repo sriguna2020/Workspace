@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="triangle" class="com.sriguna.spring.Triangle" name="triangle-name" autowire="byName">
+	<!-- this will do the beans autowire depends on name.. 
+	main thing here is bean id and member var name is same.. 
+	
+	byType autowire will do autowire by type in class attribute 
+	
+	also we can do autowire by constructor.. spring will instantiate
+	all the beans then pass it to constructor.. here we should have only one bean per type
+	
+	if we dont mention any autowire then by default it will take autowire OFF.
+	
+	in real world app autowire will not help us in debug if we got any issues..
+	
+	but for small no. of beans it is recommended to do.. but not for application having large no. of beans
+	-->
+	</bean>
+	<bean id="pointB" class="com.sriguna.spring.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="20"></property>
+	</bean>
+
+	<bean id="pointC" class="com.sriguna.spring.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="-20"></property>
+	</bean>
+
+
+
+	<!-- Aliases - to give different name to same bean. following is alias of 
+		triangle. Also, we can give alias name in bean definition itself by name 
+		attribute. But good practice is to use IDs. -->
+
+	<alias name="triangle" alias="alias-triangle" />
+
+	<!-- we have to create a separate objects for each point -->
+
+	<bean id="pointA" class="com.sriguna.spring.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+
+
+
+
+</beans>

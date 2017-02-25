@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+	<bean id="parentTriangle" class="com.sriguna.spring.Triangle" abstract="true"> <!-- making abstract as true will make spring not to create bean for this parentTriangle .. just use as template to extend the bean defintions -->
+	<!-- just we can use this to have common bean definitions -->
+	<property name="pointA" ref="pointA"></property>
+	<property name="points">
+	<list>
+	<ref bean="pointA"/>
+	</list>
+	</property>
+	</bean>
+ <!-- we can inherit the pointA definition from parentTriangle to triangle.. if we need new definition.. then we can create a new definition -->
+	<!-- we are inheriting the configuration of pointA from parentTriangle to triangle1
+	also giving extra configuration
+	
+	by this way we can have all definitions in one place bean and use for subsequent beans
+	
+	one more advantage with this bean Defintion inheritance = having list definition and use that list definition 
+	
+	 -->
+	<bean id="triangle1" class="com.sriguna.spring.Triangle" parent="parentTriangle">
+	<property name="points" > <!-- this will overwrite the pointA in list with pointB defined in this ... we can also merge the list.. using "merge" attribute and set to TRUE -->
+	<list merge="true"> <!-- merge will add pointB to existing pointA in list -->
+	<ref bean="pointB"/>
+	</list>
+	</property>
+	
+	<property name="pointB" ref="pointB"></property>
+	<property name="pointC" ref="pointC"></property>
+	</bean>
+	
+	
+	<bean id="triangle2" class="com.sriguna.spring.Triangle" parent="parentTriangle">
+	<property name="pointB" ref="pointB"></property>
+	</bean>
+	
+	<bean id="pointA" class="com.sriguna.spring.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+	
+	<bean id="pointB" class="com.sriguna.spring.Point">
+		<property name="x" value="-20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="pointC" class="com.sriguna.spring.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	
+
+</beans>

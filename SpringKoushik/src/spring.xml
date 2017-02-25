@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="triangle" class="com.spring.sriguna.Triangle" name="triangle-name">
+	<!-- ref can be either ID, ALIAS OR NAME.. BUT we can make only ID as the ref. no other than this .. i.e., ALIAS, NAME --> 
+		<property name="pointA" ref="zero"></property>
+		<property name="pointB">
+			<!-- this is we are doing just to avoid the bean to be created all time.. 
+				with this .. we can make the bean to be used only when necesary.. i.e., its 
+				used only inside the pointB.. nowhere else across pgm.. as its not used anywhere 
+				in pgm we dont want to use id for this. also remove the ref attribue
+				this is called as INNER BEAN.. IT DOES NOT GIVE US ANY PERFORMANCE ADVANTAGE ANYWAY.. -->
+				
+				
+			<bean class="com.spring.sriguna.Point">
+				<property name="x" value="0"></property>
+				<property name="y" value="20"></property>
+			</bean>
+
+		</property>
+		<property name="pointC">
+		<bean class="com.spring.sriguna.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="-20"></property>
+	</bean>
+		
+		</property>
+	</bean>
+
+<!-- Aliases - to give different name to same bean. following is 
+alias of triangle. Also, we can give alias name in bean definition itself by name attribute.
+But good practice is to use IDs. -->
+
+<alias name="triangle" alias="alias-triangle"/>
+
+	<!-- we have to create a separate objects for each point -->
+
+	<bean id="zero" class="com.spring.sriguna.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+
+
+	
+
+</beans>

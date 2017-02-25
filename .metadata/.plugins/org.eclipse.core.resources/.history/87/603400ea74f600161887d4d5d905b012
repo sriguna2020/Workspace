@@ -1,0 +1,42 @@
+package com.sriguna.spring;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class Circle implements Shape {
+
+	private Point center;
+	
+	public Point getCenter() {
+		return center;
+	}
+
+	//this 'center' member var is must to be initialized in xml
+	//if not configured in xml.. then we need to tell spring to validate if its configured or not
+	//@Required will do this work. We add this annotation to check if this setter is executed or not.
+	//Also we need to have BeanPostProcessor
+	//org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'circle' defined in class path resource [spring.xml]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanInitializationException: Property 'center' is required for bean 'circle'
+	//at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) -
+	//This will be thrown while at the time of application intialization itself
+	//Instead of RunTimeException throwing NullPointerException
+	//
+	//@Required
+	@Autowired // we require the post processor for this..
+	//Qualifier will say this reference is for Circle class
+	//@Qualifier("circleRelated")
+	//Spring first will look for beans of type as same as one in Circle class
+	//if all belongs to same class.. then will look for one in same name.. which means..
+	// any bean have id as center will be searched.. if it not found.. then spring will look for Qualifier.
+	public void setCenter(Point center) {
+		this.center = center;
+	}
+
+	@Override
+	public void draw() {
+
+		System.out.println("Drawing circle ");
+		System.out.println("Circle point is : ("+ center.getX()+", "+center.getY()+")");
+		
+	}
+
+}

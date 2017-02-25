@@ -1,0 +1,18 @@
+package com.sriguna.udemy;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int localVar = 5;
+		Person person = new Person();
+		person.setName("Sriguna");
+		calculate(localVar);
+		System.out.println("value from calculate is " + localVar);
+	}
+
+	public static void calculate(int val) {
+		val = val * 100;
+	}
+
+}

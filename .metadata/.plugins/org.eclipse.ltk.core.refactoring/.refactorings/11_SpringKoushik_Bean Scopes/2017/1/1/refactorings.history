@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.sriguna.spring&apos; to &apos;12_SpringKoushik_ApplicationContextAware/src&apos;&#x0D;&#x0A;- Original project: &apos;11_SpringKoushik_Bean Scopes&apos;&#x0D;&#x0A;- Destination element: &apos;12_SpringKoushik_ApplicationContextAware/src&apos;&#x0D;&#x0A;- Original element: &apos;11_SpringKoushik_Bean Scopes/src/com.sriguna.spring&apos;" description="Copy package" destination="=12_SpringKoushik_ApplicationContextAware/src" element1="/src&lt;com.sriguna.spring" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1483787921575" version="1.0"/>
+</session>

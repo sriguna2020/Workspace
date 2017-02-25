@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;com.sriguna.practice.GreetingImplTest.setup().greet&apos; in &apos;com.sriguna.practice.GreetingImplTest.setup()&apos; to field&#x0D;&#x0A;- Original project: &apos;TestJava&apos;&#x0D;&#x0A;- Original element: &apos;com.sriguna.practice.GreetingImplTest.setup().greet&apos;&#x0D;&#x0A;- Field name: &apos;greet&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;greet&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/test&lt;com.sriguna.practice{GreetingImplTest.java" name="greet" selection="208 26" stamp="1475410974916" static="false" version="1.0" visibility="2"/>
+</session>

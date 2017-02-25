@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474716825814_1" label="HelloWorld" name="HelloWorld">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HelloWorld" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474717733463_2" label="SampleProject" name="SampleProject">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SampleProject" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474788401126_3" label="DIPractice" name="DIPractice">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DIPractice" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1474793892489_4" label="WebSpring" name="WebSpring">
+<item elementID="=WebSpring" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1472379846504_0" label="Window Working Set" name="Aggregate for window 1472379846503"/>
+</workingSetManager>

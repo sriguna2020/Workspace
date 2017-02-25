@@ -1,0 +1,16 @@
+package com.sriguna.udemy;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int localVar = 5;
+		calculate(localVar);
+		System.out.println("value from calculate is " + localVar);
+	}
+
+	public static void calculate(Integer val) {
+		val = val * 100;
+	}
+
+}

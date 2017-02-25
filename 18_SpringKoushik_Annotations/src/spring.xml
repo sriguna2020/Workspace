@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+	<bean id="triangle1" class="com.sriguna.spring.Triangle">
+	<property name="pointA" ref="pointA"></property>
+	<property name="pointB" ref="pointB"></property>
+	<property name="pointC" ref="pointC"></property>
+	</bean>
+	
+	
+	<bean id="circle" class="com.sriguna.spring.Circle">
+	<!-- <property name="center" ref="pointA"></property> -->
+	</bean>
+	
+	
+	<bean id="pointA" class="com.sriguna.spring.Point">
+		<property name="x" value="${pointA.pointX}"></property>
+		<property name="y" value="${pointA.pointY}"></property>
+	</bean>
+	
+	<bean id="pointB" class="com.sriguna.spring.Point">
+		<property name="x" value="-20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+	<bean id="pointC" class="com.sriguna.spring.Point">
+		<property name="x" value="20"></property>
+		<property name="y" value="0"></property>
+	</bean>
+
+<!-- 
+we need not mention the id for this bean
+
+similarly we can have any no. of bean post processor like one for name, order ,etc.,
+ -->
+	<bean class="com.sriguna.spring.MyBeanFactorPostProcessor"></bean>
+	
+	<!-- this PropertyPlaceholderConfigurer places the values where expression is given .. but
+	we have to say the properties file which have all the values  -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<!-- here we mention the properties file.. also we mention just file name without path..
+	so it assumes.. both spring.xml and ppts file in same location 
+	
+	before bean factory initializes properties file will be loaded-->
+	<property name="locations" value="pointsConfig.properties"></property>
+	</bean>
+	
+<!-- BeanPostProcessor for @Required annotaion  -->
+<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+
+</beans>

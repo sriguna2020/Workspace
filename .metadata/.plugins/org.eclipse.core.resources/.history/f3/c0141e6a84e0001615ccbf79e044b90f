@@ -1,0 +1,15 @@
+package com.sriguna.udemy;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int localVar = 5;
+
+	}
+
+	public static void calculate(int val) {
+		val = val * 100;
+	}
+
+}
